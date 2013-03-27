@@ -1,4 +1,4 @@
 shifter
 =======
 
-Platform independant puzzle game.
+Platform independent puzzle game.
