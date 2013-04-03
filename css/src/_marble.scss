@@ -1,0 +1,82 @@
+@mixin marble_gradient($from, $to) {
+	background-color: $to;
+	background-image: -webkit-radial-gradient(30% 30%, circle, $from,  $to);
+	background-image: -moz-radial-gradient(30% 30%, circle,  $from, $to);
+	background-image: -ms-radial-gradient(30% 30%, circle, $from, $to);
+	background-image: radial-gradient(circle farthest-corner at 30% 30%, $from, $to);
+}
+
+.marble {
+	overflow: hidden;
+	position: absolute;
+	border-radius: 50%;
+	width: 100px;
+	height: 100px;
+	text-align: center;
+	line-height: 110px;
+	font-size: 80px;
+	color: #fff;
+	cursor: pointer;
+	text-shadow: 0 0 2px rgba(0,0,0,.8);
+	z-index: 2;
+
+	-webkit-transition: left ease 400ms, top ease 400ms, height ease 400ms, width ease 400ms;
+	-moz-transition: left ease 400ms, top ease 400ms, height ease 400ms, width ease 400ms;
+	transition: left ease 400ms, top ease 400ms, height ease 400ms, width ease 400ms;
+
+	.mousedown &:hover,
+	&.active {
+		box-shadow: 0 0 20px rgba(255,255,255, .8);
+		-webkit-transition: none;
+		-moz-transition: none;
+		transition: none;
+	}
+
+	&.active {
+		z-index: 1;
+	}
+
+	.mousedown &:hover {
+		box-shadow: 0 0 30px rgba(0,255,0, .9);
+	}
+
+	.mousedown &.active:hover {
+		box-shadow: 0 0 20px rgba(255,255,255, .8);
+	}
+}
+
+.small {
+	height: 0px;
+	width: 0px;
+	-webkit-transition: none;
+	-moz-transition: none;
+	transition: none;
+}
+
+.orange {
+	@include marble_gradient(#ffc890, #d34e0d);
+}
+
+.red {
+	@include marble_gradient(#ffdddd, #ff0000);
+}
+
+.blue {
+	@include marble_gradient(#ddddff, #0000ff);
+}
+
+.green {
+	@include marble_gradient(#ddffdd, #00aa00);
+}
+
+.black {
+	@include marble_gradient(#dddddd, #000000);
+}
+
+.yellow {
+	@include marble_gradient(#fefcea, #f1da36);
+}
+
+.purpur {
+	@include marble_gradient(#F3EAFF, #a849a3);
+}
