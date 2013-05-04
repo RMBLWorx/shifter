@@ -21,7 +21,7 @@ var shifter = shifter || {};
 		},
 
 		initialize: function() {
-			this.color = this.colors[Math.round(Math.random(this.colors.length) * 10)];
+			this.color = this.colors[Math.floor(Math.random() * (this.colors.length + 1))]; // https://developer.mozilla.org/en-US/docs/JavaScript/Reference/Global_Objects/Math/random
 			this.listenTo(this.model, 'change', this.render);
 			this.listenTo(this.model, 'destroy', this.remove);
 		},
