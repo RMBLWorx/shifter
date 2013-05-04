@@ -14,14 +14,14 @@ var shifter = shifter || {};
 		className: 'marble',
 
 		color: null,
-		colours: ['yellow', 'black', 'green', 'purpur', 'red', 'blue', 'orange'],
+		colors: ['yellow', 'black', 'green', 'purpur', 'red', 'blue', 'orange'],
 
 		events: {
 			'click': 'toggleActiveState'
 		},
 
 		initialize: function() {
-			this.color = this.colours[Math.round(Math.random(this.colours.length) * 10)];
+			this.color = this.colors[Math.round(Math.random(this.colors.length) * 10)];
 			this.listenTo(this.model, 'change', this.render);
 			this.listenTo(this.model, 'destroy', this.remove);
 		},
