@@ -14,7 +14,7 @@ var shifter = shifter || {};
 		className: 'marble',
 
 		color: null,
-		colors: ['yellow', 'black', 'green', 'purpur', 'red', 'blue', 'orange'],
+		colors: ['yellow', 'black', 'green', 'purple', 'red', 'blue', 'orange'],
 
 		events: {
 			'click': 'toggleActiveState'
