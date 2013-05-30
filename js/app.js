@@ -1,5 +1,21 @@
-window.shifter = window.shifter || {};
+/*global $ */
+/*jshint unused:false */
+var shifter = shifter || {};
 
+shifter.transEndEventNames = {
+	'WebkitTransition': 'webkitTransitionEnd',
+	'MozTransition': 'transitionend',
+	'OTransition': 'oTransitionEnd',
+	'msTransition': 'MSTransitionEnd',
+	'transition': 'transitionend'
+},
+shifter.transEndEventName = shifter.transEndEventNames[Modernizr.prefixed('transition')];
+
+$(function () {
+	'use strict';
+	var appview = new shifter.AppView();
+});
+/*
 shifter.init = function() {
 	var marble_collection = document.getElementsByClassName('marble');
 	var is_animating = false;
@@ -73,26 +89,7 @@ shifter.init = function() {
 		}
 		active_marble = null;
 	}, false);
-
-	var transEndEventNames = {
-		'WebkitTransition': 'webkitTransitionEnd',
-		'MozTransition': 'transitionend',
-		'OTransition': 'oTransitionEnd',
-		'msTransition': 'MSTransitionEnd',
-		'transition': 'transitionend'
-	},
-	transEndEventName = transEndEventNames[Modernizr.prefixed('transition')];
-
-	document.body.addEventListener(transEndEventName, function(event) {
-		is_animating = false;
-	}, false);
-	setTimeout(function() {
-		for (var i = 0; i < marble_collection.length; i++) {
-			marble_collection[i].classList.remove('small');
-			marble_collection[i].style.top = marble_collection[i].dataset.top + 'px';
-			marble_collection[i].style.left = marble_collection[i].dataset.left + 'px';
-		}
-	}, 500);
 };
 
 shifter.init();
+*/
