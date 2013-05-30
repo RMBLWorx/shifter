@@ -18,10 +18,10 @@ var shifter = shifter || {};
 			this.listenTo(shifter.Marbles, 'change:selected', shifter.Marbles.switch);
 			var left = 10,
 				top = 10,
-				i;
+				i = 0;
 			shifter.Marbles.fetch();
 			shifter.Marbles.reset();
-			for (i = 0; i < 17; i++) {
+			for (; i < 17; i++) {
 				left += 110;
 				if (i === 5 || i === 11) {
 					top += 110;

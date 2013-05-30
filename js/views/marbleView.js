@@ -21,20 +21,25 @@ var shifter = shifter || {};
 		},
 
 		initialize: function() {
-			this.color = this.colors[Math.floor(Math.random() * (this.colors.length + 1))]; // https://developer.mozilla.org/en-US/docs/JavaScript/Reference/Global_Objects/Math/random
-			this.listenTo(this.model, 'change', this.render);
+			// https://developer.mozilla.org/en-US/docs/JavaScript/Reference/Global_Objects/Math/random
+			this.color = this.colors[Math.floor(Math.random() * (this.colors.length + 1))];
+			this.listenTo(this.model, 'change:pos', this.updatePosition);
 			this.listenTo(this.model, 'destroy', this.remove);
 		},
 
 		render: function() {
-			var pos = this.model.get('pos');
 			this.$el.html(this.model.get('character')).addClass(this.model.get('type'));
+			this.$el.addClass(this.color);
+			this.updatePosition();
+			return this;
+		},
+
+		updatePosition: function() {
+			var pos = this.model.get('pos');
 			this.$el.css({
 				left: pos.x,
 				top: pos.y
 			});
-			this.$el.addClass(this.color);
-			return this;
 		},
 
 		toggleActiveState: function() {

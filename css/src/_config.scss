@@ -1,0 +1,14 @@
+@mixin marble_gradient($from, $to) {
+	background-color: $to;
+	background-image: -webkit-radial-gradient(30% 30%, circle, $from,  $to);
+	background-image: -moz-radial-gradient(30% 30%, circle,  $from, $to);
+	background-image: -ms-radial-gradient(30% 30%, circle, $from, $to);
+	background-image: radial-gradient(circle farthest-corner at 30% 30%, $from, $to);
+}
+
+@mixin transition($value) {
+	-webkit-transition: $value;
+	-moz-transition: $value;
+	-ms-transition: $value;
+	transition: $value;
+}
