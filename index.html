@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="de">
+<html lang="de" class="no-js">
 <head>
 	<meta charset="utf-8"/>
 	<title>Shifter</title>
@@ -8,15 +8,18 @@
 	<script src="js/libs/modernizr.js"></script>
 </head>
 <body>
-	<ul>
+	<div id="shifter">
+		<ul id="marble-list"></ul>
+	</div>
+	<ul style="display: none;">
 		<li class="marble yellow small">N</li>
 		<li class="marble black small">L</li>
 		<li class="marble green small">A</li>
-		<li class="marble purpur small">N</li>
+		<li class="marble purple small">N</li>
 		<li class="marble black small">A</li>
 
 		<li class="marble blue small">A</li>
-		<li class="marble purpur small">E</li>
+		<li class="marble purple small">E</li>
 		<li class="marble orange small">P</li>
 		<li class="marble green small">H</li>
 		<li class="marble red small">S</li>
@@ -28,6 +31,14 @@
 		<li class="marble green small">E</li>
 		<li class="marble orange small">D</li>
 	</ul>
+	<script src="js/libs/jquery.js"></script>
+	<script src="js/libs/underscore.js"></script>
+	<script src="js/libs/backbone.js"></script>
+	<script src="js/libs/backbone.localStorage.js"></script>
+	<script src="js/models/marbleModel.js"></script>
+	<script src="js/collections/marbles.js"></script>
+	<script src="js/views/marbleView.js"></script>
+	<script src="js/views/appView.js"></script>
 	<script src="js/app.js"></script>
 </body>
 </html>
